@@ -82,6 +82,83 @@
 					
 					</ul>
 				</li>
+
+				<li class="active">
+					<a href="#">
+						<i class="fa fa-circle-o text-red"></i> Manajemen Surat
+						<span class="pull-right-container">
+							<i class="fa fa-angle-left pull-right"></i>
+						</span>
+					</a>
+					<ul class="treeview-menu">
+					<?php 
+						// fungsi untuk pengecekan menu aktif
+						// jika menu kategori dipilih, menu kategori aktif
+						if ($_GET["page"]=="suratpesananbarang") { 
+					?>
+							<li class="active">
+								<a href="main.php?page=suratpesananbarang"><i class="fa fa-list"></i> Surat Pesanan Barang </a>
+							</li>
+					<?php
+						}
+						// jika tidak, menu kategori tidak aktif
+						else { ?>
+							<li>
+								<a href="main.php?page=suratpesananbarang"><i class="fa fa-list"></i> Surat Pesanan Barang </a>
+							</li>
+					<?php } ?>
+					<?php 
+						// fungsi untuk pengecekan menu aktif
+						// jika menu Kriminal dipilih, menu Kriminal aktif
+						if ($_GET["page"]=="fasilitas") { 
+					?>
+							<li class="active">
+								<a href="main.php?page=bastpb"><i class="fa fa-list"></i> Berita Acara Serah Terima Dan Penerimaan Barang </a>
+							</li>
+					<?php
+						}
+						// jika tidak, menu Kriminal tidak aktif
+						else { ?>
+							<li>
+								<a href="main.php?page=bastpb"><i class="fa fa-list"></i>Berita Acara Serah Terima Dan Penerimaan Barang  </a>
+							</li>
+					<?php } ?>
+					<?php 
+						// fungsi untuk pengecekan menu aktif
+						// jika menu agenda dipilih, menu agenda aktif
+						if ($_GET["page"]=="kelurahan") { 
+					?>
+							<li class="active">
+								<a href="main.php?page=bappb"><i class="fa fa-list"></i> Berita Acara Pemeriksaan Dan Penerima Barang </a>
+							</li>
+					<?php
+						}
+						// jika tidak, menu agenda tidak aktif
+						else { ?>
+							<li>
+								<a href="main.php?page=bappb"><i class="fa fa-list"></i> Berita Acara Pemeriksaan Dan Penerima Barang </a>
+							</li>
+					<?php } ?>
+					
+					<?php 
+						// fungsi untuk pengecekan menu aktif
+						// jika menu agenda dipilih, menu agenda aktif
+						if ($_GET["page"]=="peta") { 
+					?>
+							<li class="active">
+								<a href="main.php?page=peta"><i class="fa fa-list"></i> Berita Acara Pembayaran </a>
+							</li>
+					<?php
+						}
+						// jika tidak, menu agenda tidak aktif
+						else { ?>
+							<li>
+								<a href="main.php?page=peta"><i class="fa fa-list"></i> Berita Acara Pembayaran </a>
+							</li>
+					<?php } ?>
+					</ul>
+				</li>
+
 				<li class="active">
 					<a href="#">
 						<i class="fa fa-circle-o text-red"></i> Manajemen Pengguna

@@ -96,6 +96,60 @@ else {
 		break;
 		}
 	}
+
+	// Manajemen kategori
+	elseif ($_GET['page']=='suratpesananbarang'){
+    switch($act){
+		default:
+			include_once 'data/suratpesananbarang/index.php';
+		break;
+		case "tambah":
+			include_once 'data/suratpesananbarang/tambah.php';
+		break;
+		case "edit":
+			include_once 'data/suratpesananbarang/edit.php';
+		break;
+		case "lihat":
+			include_once 'data/suratpesananbarang/lihat.php';
+		break;
+		}
+	}
+
+	// Manajemen kategori
+	elseif ($_GET['page']=='bastpb'){
+    switch($act){
+		default:
+			include_once 'data/bastpb/index.php';
+		break;
+		case "tambah":
+			include_once 'data/bastpb/tambah.php';
+		break;
+		case "edit":
+			include_once 'data/bastpb/edit.php';
+		break;
+		case "lihat":
+			include_once 'data/bastpb/lihat.php';
+		break;
+		}
+	}
+
+	// Manajemen kategori
+	elseif ($_GET['page']=='bappb'){
+    switch($act){
+		default:
+			include_once 'data/bappb/index.php';
+		break;
+		case "tambah":
+			include_once 'data/bappb/tambah.php';
+		break;
+		case "edit":
+			include_once 'data/bappb/edit.php';
+		break;
+		case "lihat":
+			include_once 'data/bappb/lihat.php';
+		break;
+		}
+	}
   
   // Apabila modul tidak ditemukan
   else{
