@@ -8,8 +8,8 @@
 <?php
 // deklarasi parameter koneksi database
 $db_server   = "localhost";
-$db_username = "root";
-$db_password = "";
+$db_username = "rsud";
+$db_password = "RSUDSekayu18@";
 $db_database = "db_sifasum";
 
 // koneksi database

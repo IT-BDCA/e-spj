@@ -3,7 +3,7 @@
     <section class="sidebar">
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>	<!-- sidebar menu start -->
-		
+
 				<!-- menu sistem -->
 				<li><a href="main.php?page=home"><i class="fa fa-home"></i> Home </a></li>
 				<li class="active">
@@ -14,10 +14,10 @@
 						</span>
 					</a>
 					<ul class="treeview-menu">
-					<?php 
+					<?php
 						// fungsi untuk pengecekan menu aktif
 						// jika menu kategori dipilih, menu kategori aktif
-						if ($_GET["page"]=="jnsfasilitas") { 
+						if ($_GET["page"]=="jnsfasilitas") {
 					?>
 							<li class="active">
 								<a href="main.php?page=jnsfasilitas"><i class="fa fa-list"></i> Jenis Surat </a>
@@ -30,10 +30,10 @@
 								<a href="main.php?page=jnsfasilitas"><i class="fa fa-list"></i> Jenis Surat</a>
 							</li>
 					<?php } ?>
-					<?php 
+					<?php
 						// fungsi untuk pengecekan menu aktif
 						// jika menu Kriminal dipilih, menu Kriminal aktif
-						if ($_GET["page"]=="fasilitas") { 
+						if ($_GET["page"]=="fasilitas") {
 					?>
 							<li class="active">
 								<a href="main.php?page=fasilitas"><i class="fa fa-list"></i> Data Barang </a>
@@ -46,10 +46,10 @@
 								<a href="main.php?page=fasilitas"><i class="fa fa-list"></i> Data Barang </a>
 							</li>
 					<?php } ?>
-					<?php 
+					<?php
 						// fungsi untuk pengecekan menu aktif
 						// jika menu agenda dipilih, menu agenda aktif
-						if ($_GET["page"]=="kelurahan") { 
+						if ($_GET["page"]=="kelurahan") {
 					?>
 							<li class="active">
 								<a href="main.php?page=kelurahan"><i class="fa fa-list"></i> Perusahaan </a>
@@ -62,11 +62,11 @@
 								<a href="main.php?page=kelurahan"><i class="fa fa-list"></i> Perusahaan </a>
 							</li>
 					<?php } ?>
-					
-					<?php 
+
+					<?php
 						// fungsi untuk pengecekan menu aktif
 						// jika menu agenda dipilih, menu agenda aktif
-						if ($_GET["page"]=="peta") { 
+						if ($_GET["page"]=="peta") {
 					?>
 							<li class="active">
 								<a href="main.php?page=peta"><i class="fa fa-list"></i> Penanggung Jawab </a>
@@ -79,7 +79,7 @@
 								<a href="main.php?page=peta"><i class="fa fa-list"></i> Penanggung Jawab </a>
 							</li>
 					<?php } ?>
-					
+
 					</ul>
 				</li>
 
@@ -91,71 +91,21 @@
 						</span>
 					</a>
 					<ul class="treeview-menu">
-					<?php 
-						// fungsi untuk pengecekan menu aktif
-						// jika menu kategori dipilih, menu kategori aktif
-						if ($_GET["page"]=="suratpesananbarang") { 
-					?>
 							<li class="active">
 								<a href="main.php?page=suratpesananbarang"><i class="fa fa-list"></i> Surat Pesanan Barang </a>
 							</li>
-					<?php
-						}
-						// jika tidak, menu kategori tidak aktif
-						else { ?>
-							<li>
-								<a href="main.php?page=suratpesananbarang"><i class="fa fa-list"></i> Surat Pesanan Barang </a>
-							</li>
-					<?php } ?>
-					<?php 
-						// fungsi untuk pengecekan menu aktif
-						// jika menu Kriminal dipilih, menu Kriminal aktif
-						if ($_GET["page"]=="fasilitas") { 
-					?>
-							<li class="active">
-								<a href="main.php?page=bastpb"><i class="fa fa-list"></i> Berita Acara Serah Terima Dan Penerimaan Barang </a>
-							</li>
-					<?php
-						}
-						// jika tidak, menu Kriminal tidak aktif
-						else { ?>
 							<li>
 								<a href="main.php?page=bastpb"><i class="fa fa-list"></i>Berita Acara Serah Terima Dan Penerimaan Barang  </a>
 							</li>
-					<?php } ?>
-					<?php 
-						// fungsi untuk pengecekan menu aktif
-						// jika menu agenda dipilih, menu agenda aktif
-						if ($_GET["page"]=="kelurahan") { 
-					?>
-							<li class="active">
-								<a href="main.php?page=bappb"><i class="fa fa-list"></i> Berita Acara Pemeriksaan Dan Penerima Barang </a>
-							</li>
-					<?php
-						}
-						// jika tidak, menu agenda tidak aktif
-						else { ?>
 							<li>
 								<a href="main.php?page=bappb"><i class="fa fa-list"></i> Berita Acara Pemeriksaan Dan Penerima Barang </a>
 							</li>
-					<?php } ?>
-					
-					<?php 
-						// fungsi untuk pengecekan menu aktif
-						// jika menu agenda dipilih, menu agenda aktif
-						if ($_GET["page"]=="peta") { 
-					?>
-							<li class="active">
-								<a href="main.php?page=peta"><i class="fa fa-list"></i> Berita Acara Pembayaran </a>
-							</li>
-					<?php
-						}
-						// jika tidak, menu agenda tidak aktif
-						else { ?>
 							<li>
 								<a href="main.php?page=peta"><i class="fa fa-list"></i> Berita Acara Pembayaran </a>
 							</li>
-					<?php } ?>
+              <li>
+                <a href="main.php?page=kwitansi"> <i class="fa fa-list"></i> kwitansi </a>
+              </li>
 					</ul>
 				</li>
 
@@ -167,11 +117,11 @@
 						</span>
 					</a>
 					<ul class="treeview-menu">
-					
-					<?php 
+
+					<?php
 						// fungsi untuk pengecekan menu aktif
 						// jika menu user dipilih, menu user aktif
-						if ($_GET["page"]=="users") { 
+						if ($_GET["page"]=="users") {
 					?>
 							<li class="active">
 								<a href="main.php?page=users"><i class="fa fa-list"></i> Users </a>
@@ -184,13 +134,13 @@
 								<a href="main.php?page=users"><i class="fa fa-list"></i> Users </a>
 							</li>
 					<?php } ?>
-					
+
 					</ul>
 				</li>
-			
-			
-    
-		
+
+
+
+
 	 </ul>
     </section>
     <!-- /.sidebar -->
