@@ -41,17 +41,17 @@ else {
 						$sim = mysqli_query($koneksi, "INSERT INTO tbl_fasilitas (id_users,id_jnsfasilitas,id_kelurahan,id_peta,nm_fasilitas,nm_kegiatan,isi_surat,lo_fasilitas,la_fasilitas,lk_fasilitas) value
 								('$_SESSION[id_users]', '$id_jnsfasilitas', '$id_kelurahan', '$id_peta', '$nm_fasilitas', '$nm_kegiatan', '$isi_surat', '$lo_fasilitas', '$la_fasilitas', '$lk_fasilitas')");
 						if($sim == true){
-							echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=fasilitas&alert=1'>";
+							echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=bastpb&alert=1'>";
 							exit;
 						}else{
-							echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=fasilitas&alert=4'>";
+							echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=bastpb&alert=4'>";
 							exit;
 						}
 									
 					}else{
 									
 						if ($file_ext =='php' || $file_ext =='*.php' || $file_ext =='*.php.jpg' || $file_ext =='*.php.jpeg' || $file_ext =='.php.png' || $file_ext =='.php.pjeg'){
-							echo "<script>window.alert('Upload Gagal, Pastikan File yang di Upload tidak bertipe *.PHP');window.location=('../../main.php?page=fasilitas&alert=5')</script>";
+							echo "<script>window.alert('Upload Gagal, Pastikan File yang di Upload tidak bertipe *.PHP');window.location=('../../main.php?page=bastpb&alert=5')</script>";
 						}else{
 							if(in_array($file_ext, $allowed_ext) == true){
 								$nm_file = md5($nama_gambar);
@@ -64,20 +64,20 @@ else {
 								if($sim == true){
 									UploadFotox($fl, $folder, $ukuran);
 									
-									echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=fasilitas&alert=1'>";
+									echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=bastpb&alert=1'>";
 									exit;
 								}else{
-									echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=fasilitas&alert=4'>";
+									echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=bastpb&alert=4'>";
 									exit;
 								}
 							}else{
-								echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=fasilitas&alert=4X'>";
+								echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=bastpb&alert=4X'>";
 								exit;
 							}
 						}
 					}
                 
-        }else { echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=fasilitas&alert=4'>"; exit; }
+        }else { echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=bastpb&alert=4'>"; exit; }
     }
     
     elseif ($_GET['act']=='update') {

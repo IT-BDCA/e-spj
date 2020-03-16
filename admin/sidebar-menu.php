@@ -91,7 +91,7 @@
 						</span>
 					</a>
 					<ul class="treeview-menu">
-							<li class="active">
+							<li>
 								<a href="main.php?page=suratpesananbarang"><i class="fa fa-list"></i> Surat Pesanan Barang </a>
 							</li>
 							<li>

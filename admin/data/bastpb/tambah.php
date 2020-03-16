@@ -98,6 +98,7 @@ else {
 										</span>
 									</div>
 								</div>
+								
 
 								<div class="form-group">
 									<label class="col-md-3 pull-left">NIP</label>
@@ -110,39 +111,20 @@ else {
 
 								<div class="form-group">
 									<label class="col-md-3 pull-left">Jabatan</label>
-									<div class="col-md-9">
+								<div class="col-md-9">
 										<span class="help-block">
-											<select class="form-control" name="id_peta">
-											<option>Pilih</option>
-											<?php
-											$query  = "SELECT * FROM tbl_peta";
-											$tampil = mysqli_query($koneksi, $query);
-											while($r=mysqli_fetch_array($tampil)){
-											  echo "<option value=\"$r[id_peta]\">$r[nm_peta]</option>";
-											}
-											?>					
-										</select>
+											<input class="form-control input-md" type="text" name="la_fasilitas"/> 
 										</span>
 									</div>
 								</div>
+								
 
 								<div class="form-group">
 									<label class="col-md-3 pull-left">Alamat</label>
-									<div class="col-md-9">
-										<span class="help-block">
-											<select class="form-control" name="id_peta">
-											<option>Pilih</option>
-											<?php
-											$query  = "SELECT * FROM tbl_peta";
-											$tampil = mysqli_query($koneksi, $query);
-											while($r=mysqli_fetch_array($tampil)){
-											  echo "<option value=\"$r[id_peta]\">$r[nm_peta]</option>";
-											}
-											?>					
-										</select>
-										</span>
-									</div>
-								</div>
+									<div class="col-sm-9">
+							<textarea class="form-control" name="nm_barang"><?php print $data['nm_barang']; ?></textarea>
+						</div>
+					</div>
 
 								<div class="form-group">
 									<label class="col-md-3 pull-left">Telepon</label>
@@ -209,7 +191,7 @@ else {
 						  <div class="form-group">
 							<div class="col-sm-offset-3 col-md-9">
 							  <input type="submit" class="btn btn-primary btn-submit" name="save" value="Simpan">
-							  <a href="main.php?page=fasilitas" class="btn btn-default btn-reset">Batal</a>
+							  <a href="main.php?page=bastpb" class="btn btn-default btn-reset">Batal</a>
 							</div>
 						  </div>
 					  </div>

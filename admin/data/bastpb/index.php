@@ -52,7 +52,7 @@ else {
     // jika alert = 2
     // tampilkan pesan Sukses "artikelberhasil diubah"
     elseif ($_GET['alert'] == 2) {
-      echo "<a href='main.php?page=fasilitas'><div class='alert alert-success alert-dismissable'>
+      echo "<a href='main.php?page=bastpb'><div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Success!</h4>
               Data berhasil diubah.
@@ -61,7 +61,7 @@ else {
     // jika alert = 3
     // tampilkan pesan Sukses " berhasil dihapus"
     elseif ($_GET['alert'] == 3) {
-      echo "<a href='main.php?page=fasilitas'><div class='alert alert-success alert-dismissable'>
+      echo "<a href='main.php?page=bastpb'><div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Success!</h4>
               Data berhasil di hapus.
@@ -70,7 +70,7 @@ else {
     // jika alert = 4
     // tampilkan pesan Upload Gagal "Pastikan file yang diupload sudah benar"
     elseif ($_GET['alert'] == 4) {
-      echo "<a href='main.php?page=fasilitas'><div class='alert alert-danger alert-dismissable'>
+      echo "<a href='main.php?page=bastpb'><div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Failed!</h4>
               Data gagal di simpan.
@@ -79,14 +79,14 @@ else {
 	// jika alert = 5
     // tampilkan pesan Upload Gagal "Pastikan file yang diupload sudah benar"
     elseif ($_GET['alert'] == 5) {
-      echo "<a href='main.php?page=fasilitas'><div class='alert alert-danger alert-dismissable'>
+      echo "<a href='main.php?page=bastpb'><div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Failed!</h4>
               Data gagal di perbaharui.
             </div></a>";
     }
 	elseif ($_GET['alert'] == 6) {
-      echo "<a href='main.php?page=fasilitas'><div class='alert alert-danger alert-dismissable'>
+      echo "<a href='main.php?page=bastpb'><div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Failed!</h4>
               Data gagal di hapus.
@@ -137,14 +137,14 @@ else {
 					  <td width='150'>$data[nm_kelurahan]</td>
                       <td class='center' width='150'>
                         <div>
-                          <a data-toggle='tooltip' data-placement='top' title='Lihat' style='margin-right:5px' class='btn btn-primary btn-sm' href='main.php?page=fasilitas&act=lihat&id=$data[id_fasilitas]'>
+                          <a data-toggle='tooltip' data-placement='top' title='Lihat' style='margin-right:5px' class='btn btn-primary btn-sm' href='main.php?page=bastpb&act=lihat&id=$data[id_fasilitas]'>
                               <i class='fa fa-eye'></i> Lihat
                           </a>
-						  <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-primary btn-sm' href='main.php?page=fasilitas&act=edit&id=$data[id_fasilitas]'>
+						  <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-primary btn-sm' href='main.php?page=bastpb&act=edit&id=$data[id_fasilitas]'>
                              <i class='fa fa-edit'></i> Ubah
                           </a>";
             ?>
-                          <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="data/fasilitas/proses.php?act=delete&id=<?php echo $data['id_fasilitas'];?>" onclick="return confirm('Apakah anda akan mengahapus fasilitas <?php echo $data['nm_fasilitas']; ?> ?');">
+                          <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="data/bastpb/proses.php?act=delete&id=<?php echo $data['id_fasilitas'];?>" onclick="return confirm('Apakah anda akan mengahapus fasilitas <?php echo $data['nm_fasilitas']; ?> ?');">
 			<i style="color:#fff" class="fa fa-trash"></i> Hapus
                           </a>
             <?php

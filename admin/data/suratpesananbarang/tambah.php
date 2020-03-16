@@ -46,9 +46,8 @@ else {
 				<div class="box-body">
 					<div class="col-xs-12">
 
-				<form class="form-horizontal" action="data/fasilitas/proses.php?act=insert" method="POST" enctype="multipart/form-data">
+				<form class="form-horizontal" action="data/suratpesananbarang/proses.php?act=insert" method="POST" enctype="multipart/form-data">
 					<div class="box-body">
-						
 						<div class="col-xs-12">
 
 							<div class="form-group">
@@ -91,19 +90,12 @@ else {
 									<label class="col-md-2 pull-left">Nama</label>
 									<div class="col-md-10">
 										<span class="help-block">
-											<select class="form-control" name="id_kelurahan">
-											<option>Pilih</option>
-											<?php
-											$query  = "SELECT * FROM tbl_kelurahan";
-											$tampil = mysqli_query($koneksi, $query);
-											while($r=mysqli_fetch_array($tampil)){
-											  echo "<option value=\"$r[id_kelurahan]\">$r[nm_kelurahan]</option>";
-											}
-											?>					
-										</select>
+											<input class="form-control input-md" type="text" name="nm_penyedia"/> 
 										</span>
 									</div>
 								</div>
+									
+								
 
 								<div class="form-group">
 									<label class="col-md-2 pull-left">Alamat</label>
@@ -140,7 +132,7 @@ else {
 										</span>
 									</div>
 								</div>
-
+							
 								<div class="form-group">
 						<label class="col-sm-2 pull-left">Nama Barang</label>
 						<div class="col-sm-10">
@@ -179,7 +171,7 @@ else {
 					<div class="form-group">
 						<label class="col-sm-2 pull-left">Ket</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" name="total_harga"><?php print $data['total_harga']; ?></textarea>
+							<textarea class="form-control" name="keterangan"><?php print $data['keterangan']; ?></textarea>
 						</div>
 					</div>
 					  

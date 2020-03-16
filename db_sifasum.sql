@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Mar 2020 pada 08.37
+-- Waktu pembuatan: 16 Mar 2020 pada 05.39
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 5.6.38
 
@@ -44,18 +44,19 @@ CREATE TABLE `tbl_fasilitas` (
   `isi_surat` text NOT NULL,
   `nm_barang` text NOT NULL,
   `stn_barang` varchar(20) NOT NULL,
-  `jml_barang` int(250) NOT NULL,
+  `jml_barang` text NOT NULL,
   `hrg_satuan` int(250) NOT NULL,
   `total_harga` int(250) NOT NULL,
-  `keterangan` text NOT NULL
+  `keterangan` text NOT NULL,
+  `nm_penyedia` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_fasilitas`
 --
 
-INSERT INTO `tbl_fasilitas` (`id_fasilitas`, `id_jnsfasilitas`, `id_kelurahan`, `id_peta`, `id_users`, `nm_fasilitas`, `lk_fasilitas`, `tgl_posting`, `lo_fasilitas`, `la_fasilitas`, `gb_fasilitas`, `nm_kegiatan`, `isi_surat`, `nm_barang`, `stn_barang`, `jml_barang`, `hrg_satuan`, `total_harga`, `keterangan`) VALUES
-(81, 5, 16, 4, 1, '442/(03)/Obat BLUD/IFRS/RSUD/1/2020', '44203obat-bludifrsrsud12020', '2020-03-10 10:04:29', '-', 'Jl. AKBP Cek Agus No 6534 Rt. 49 Kel 8 Ilir Kec Ilir Timur II Palembang', '', 'Pengadaan Obat-obatan dan Perbekalan Farmasi', 'Sesuai Dengan surat permintaan No: 442/(03)/Obat BLUD/IFRS/RSUD/1/2020, Tanggal (02 Januari 2020) untuk keperluan kegiatan Pengadaan Obat-obatan dan Perbekalan Farmasi di RSUD Sekayu agar pelayanan kesehatan di RSUD Sekayu berjalan dengan baik, kami memesan kepada:', '', '', 0, 0, 0, '');
+INSERT INTO `tbl_fasilitas` (`id_fasilitas`, `id_jnsfasilitas`, `id_kelurahan`, `id_peta`, `id_users`, `nm_fasilitas`, `lk_fasilitas`, `tgl_posting`, `lo_fasilitas`, `la_fasilitas`, `gb_fasilitas`, `nm_kegiatan`, `isi_surat`, `nm_barang`, `stn_barang`, `jml_barang`, `hrg_satuan`, `total_harga`, `keterangan`, `nm_penyedia`) VALUES
+(93, 5, 0, 4, 1, '442/(03)/Obat BLUD/IFRS/RSUD/1/2020', '44203obat-bludifrsrsud12020', '2020-03-16 09:54:56', '-', 'Jl. AKBP Cek Agus No 6534 Rt. 49 Kel 8 Ilir Kec Ilir Timur II Palembang', '', 'Pengadaan Obat-obatan dan Perbekalan Farmasi', '', 'NOVOMIX-30 @5 FLEXPEN\r\nNOVORAPID @5 FLEXPEN', 'BOX\r\nBOX', '2', 0, 0, '-\r\n-', 'PT. Anugrah Argon Medica');
 
 -- --------------------------------------------------------
 
@@ -76,12 +77,12 @@ CREATE TABLE `tbl_jnsfasilitas` (
 --
 
 INSERT INTO `tbl_jnsfasilitas` (`id_jnsfasilitas`, `nm_jnsfasilitas`, `map_jnsfasilitas`, `lk_jnsfasilitas`, `st_jnsfasilitas`) VALUES
-(1, 'Kwitansi Dan Bukti Pembayaran', '&lt;style&gt;.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}&lt;/style&gt;&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;500&quot; height=&quot;400&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; title=&quot;Masjid Sekayu&quot; src=&quot;//saputradedi.maps.arcgis.com/apps/Embed/index.html?webmap=3ca66dda2b7f435daa7189dae2d8569f&amp;extent=103.6489,-2.997,104.0081,-2.8105&amp;home=true&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;details=true&amp;legend=true&amp;active_panel=details&amp;basemap_gallery=true&amp;disable_scroll=false&amp;theme=light&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;', 'kwitansi-dan-bukti-pembayaran', 'Y'),
-(2, 'Berita Acara Pembayaran', '&lt;style&gt;.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}&lt;/style&gt;&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;500&quot; height=&quot;400&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; title=&quot;Koordinat Penginapan&quot; src=&quot;//dedisaputra.maps.arcgis.com/apps/Embed/index.html?webmap=90443c68e22343e2967bd9dfe944782b&amp;extent=103.1202,-3.2191,104.5567,-2.4729&amp;home=true&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;legend=true&amp;disable_scroll=false&amp;theme=light&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;', 'berita-acara-pembayaran', 'Y'),
-(3, 'Berita Acara Pemeriksaan Dan Penerimaan Barang', '&lt;style&gt;.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}&lt;/style&gt;&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;500&quot; height=&quot;400&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; title=&quot;Koordinat RSUD Sekayu&quot; src=&quot;//dedisaputra.maps.arcgis.com/apps/Embed/index.html?webmap=807dca5036c24375ac929b89278da550&amp;extent=103.068,-3.1923,104.5045,-2.4462&amp;home=true&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;legend=true&amp;disable_scroll=false&amp;theme=light&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;', 'berita-acara-pemeriksaan-dan-penerimaan-barang', 'Y'),
-(4, 'Berita Acara Serah Terima Dan Penerimaan Barang', '&lt;style&gt;.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}&lt;/style&gt;&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;500&quot; height=&quot;400&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; title=&quot;Koordinat Kantor Polisi&quot; src=&quot;//dedisaputra.maps.arcgis.com/apps/Embed/index.html?webmap=a7ff6c44c9eb4b379615123ed12d105c&amp;extent=103.1202,-3.2191,104.5567,-2.4729&amp;home=true&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;legend=true&amp;disable_scroll=false&amp;theme=light&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;', 'berita-acara-serah-terima-dan-penerimaan-barang', 'Y'),
+(1, 'KWITANSI DAN BUKTI PEMBAYARAN', '', 'kwitansi-dan-bukti-pembayaran', 'Y'),
+(2, 'BERITA ACARA PEMBAYARAN', '', 'berita-acara-pembayaran', 'Y'),
+(3, 'BERITA ACARA PEMERIKSAAN DAN PENERIMAAN BARANG', '', 'berita-acara-pemeriksaan-dan-penerimaan-barang', 'Y'),
+(4, 'BERITA ACARA SERAH TERIMA DAN PENERIMAAN BARANG', '', 'berita-acara-serah-terima-dan-penerimaan-barang', 'Y'),
 (5, 'SURAT PESANAN BARANG', '', 'surat-pesanan-barang', 'Y'),
-(6, 'Laporan Verifikasi Keuangan', '', 'laporan-verifikasi-keuangan', 'Y');
+(6, 'LAPORAN VERIFIKASI KEUANGAN', '', 'laporan-verifikasi-keuangan', 'Y');
 
 -- --------------------------------------------------------
 
@@ -147,7 +148,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `id_sesi`, `nm_user`, `ps_user`) VALUES
-(1, 'ctm7j0s2trjj2iororfvfqnt60', 'admin', '12345');
+(1, 'kivmmomkf1ulgr4b6qc6gukoo2', 'admin', '12345');
 
 --
 -- Indexes for dumped tables
@@ -191,7 +192,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT untuk tabel `tbl_fasilitas`
 --
 ALTER TABLE `tbl_fasilitas`
-  MODIFY `id_fasilitas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id_fasilitas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_jnsfasilitas`

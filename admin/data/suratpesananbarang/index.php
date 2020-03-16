@@ -52,7 +52,7 @@ else {
     // jika alert = 2
     // tampilkan pesan Sukses "portfolio berhasil diubah"
     elseif ($_GET['alert'] == 2) {
-      echo "<a href='main.php?page=jnsfasilitas'><div class='alert alert-success alert-dismissable'>
+      echo "<a href='main.php?page=suratpesananbarang'><div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Success!</h4>
               Data berhasil diubah.
@@ -61,7 +61,7 @@ else {
     // jika alert = 3
     // tampilkan pesan Sukses " berhasil dihapus"
     elseif ($_GET['alert'] == 3) {
-      echo "<a href='main.php?page=jnsfasilitas'><div class='alert alert-success alert-dismissable'>
+      echo "<a href='main.php?page=suratpesananbarang'><div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Success!</h4>
               Data berhasil di hapus.
@@ -70,7 +70,7 @@ else {
     // jika alert = 4
     // tampilkan pesan Upload Gagal "Pastikan file yang diupload sudah benar"
     elseif ($_GET['alert'] == 4) {
-      echo "<a href='main.php?page=jnsfasilitas'><div class='alert alert-danger alert-dismissable'>
+      echo "<a href='main.php?page=suratpesananbarang'><div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Failed!</h4>
               Data gagal di simpan.
@@ -79,7 +79,7 @@ else {
 	// jika alert = 5
     // tampilkan pesan Upload Gagal "Pastikan file yang diupload sudah benar"
     elseif ($_GET['alert'] == 5) {
-      echo "<a href='main.php?page=jnsfasilitas'><div class='alert alert-danger alert-dismissable'>
+      echo "<a href='main.php?page=suratpesananbarang'><div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Failed!</h4>
               Data gagal di perbaharui.
@@ -108,6 +108,7 @@ else {
                 <th class="left" width='7%' >No.</th>
 				<th class="left">NOMOR</th>
 				<th class="left" width='50%'>Penyedia</th>
+        <th class="left" width='50%'>Alamat</th>
                 <th class="center" width='20%'>Aksi</th>
               </tr>
             </thead>
@@ -116,7 +117,7 @@ else {
             <?php  
             $no = 1;
             // fungsi query untuk menampilkan data dari tabel warta
-            $query = mysqli_query($koneksi, "SELECT id_jnsfasilitas,nm_jnsfasilitas,lk_jnsfasilitas,st_jnsfasilitas FROM tbl_jnsfasilitas ORDER BY id_jnsfasilitas DESC")
+            $query = mysqli_query($koneksi, "SELECT id_fasilitas,nm_fasilitas,nm_penyedia,la_fasilitas FROM tbl_fasilitas ORDER BY id_fasilitas DESC")
                      or die('Ada kesalahan pada query tampil data kategori: ');
 
             // tampilkan data
@@ -124,14 +125,15 @@ else {
               // menampilkan isi tabel dari database ke tabel di aplikasi
               echo "<tr>
                       <td class='left'>$no</td>
-                      <td width='20%'>$data[nm_jnsfasilitas]</td>
-					  <td>index.php?page=$data[lk_jnsfasilitas]</td>
-                      <td width='30%'>
+                      <td width='300'>$data[nm_fasilitas]</td>
+					            <td width='100'>$data[nm_penyedia]</td>
+                      <td width='100'>$data[la_fasilitas]</td>
+                      <td width='300'>
 
               <a data-toggle='tooltip' data-placement='top' title='Lihat' style='margin-right:5px' class='btn btn-primary btn-sm' href='main.php?page=suratpesananbarang&act=lihat&id=$data[id_fasilitas]'>
                               <i class='fa fa-eye'></i> Lihat
 
-						  <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-primary btn-sm' href='main.php?page=jnsfasilitas&act=edit&id=$data[id_jnsfasilitas]'>
+						  <a data-toggle='tooltip' data-placement='top' title='Ubah' style='margin-right:5px' class='btn btn-primary btn-sm' href='main.php?page=suratpesananbarang&act=edit&id=$data[id_fasilitas]'>
                              <i class='fa fa-edit'></i> Ubah
                           </a>";{
             ?>
