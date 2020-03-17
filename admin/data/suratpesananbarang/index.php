@@ -137,7 +137,7 @@ else {
                              <i class='fa fa-edit'></i> Ubah
                           </a>";{
             ?>
-                          <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="data/suratpesananbarang/proses.php?act=delete&id=<?php echo $data['id_fasilitas'];?>" onclick="return confirm('Apakah anda akan mengahapus fasilitas <?php echo $data['nm_fasilitas']; ?> ?');">
+                          <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="data/suratpesananbarang/proses.php?act=delete&id=<?php echo $data['id_fasilitas'];?>" onclick="return confirm('Apakah anda akan mengahapus surat pesanan barang <?php echo $data['nm_fasilitas']; ?> ?');">
       <i style="color:#fff" class="fa fa-trash"></i> Hapus
                           </a>
             <?php

@@ -88,6 +88,25 @@ if (isset($_GET['id'])) {
 						  <input type="text" class="form-control" name="lo_fasilitas" value="<?php print $data['lo_fasilitas']; ?>" required>
 						</div>
 					</div>
+
+					<div class="form-group">
+									<div class="col-md-9">
+											<select class="form-control" name="id_peta">
+											<option>Pilih</option>
+											<?php
+											$query  = "SELECT * FROM tbl_peta";
+											$tampil = mysqli_query($koneksi, $query);
+											while($r=mysqli_fetch_array($tampil)){
+												if($data['id_peta'] == $r['id_peta']){
+													echo "<option value=\"$r[id_peta]\" selected>$r[nm_peta]</option>";
+												}else{
+													echo "<option value=\"$r[id_peta]\">$r[nm_peta]</option>";
+												}
+											}
+											?>					
+										</select>
+									</div>
+								</div>
 				  
 				  <div class="form-group">
 						<label class="col-sm-3 pull-left">Nama Barang</label>

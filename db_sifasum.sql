@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Mar 2020 pada 05.39
+-- Waktu pembuatan: 17 Mar 2020 pada 09.09
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 5.6.38
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_sifasum`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_bastpb`
+--
+
+CREATE TABLE `tbl_bastpb` (
+  `id_bastpb` int(5) NOT NULL,
+  `id_jnsfasilitas` int(10) NOT NULL,
+  `id_peta` int(5) NOT NULL,
+  `id_users` int(5) NOT NULL,
+  `nip` int(50) NOT NULL,
+  `jabatan` text NOT NULL,
+  `alamat` text NOT NULL,
+  `telepon` text NOT NULL,
+  `pihak` text NOT NULL,
+  `nomor` text NOT NULL,
+  `tgl_surat` text NOT NULL,
+  `nmr_suratpesanan` text NOT NULL,
+  `nm_barang` text NOT NULL,
+  `jumlah` text NOT NULL,
+  `satuan` text NOT NULL,
+  `hrg_satuan` text NOT NULL,
+  `total_harga` text NOT NULL,
+  `total_dibayar` text NOT NULL,
+  `dibulatkan` text NOT NULL,
+  `terbilang` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -56,7 +85,7 @@ CREATE TABLE `tbl_fasilitas` (
 --
 
 INSERT INTO `tbl_fasilitas` (`id_fasilitas`, `id_jnsfasilitas`, `id_kelurahan`, `id_peta`, `id_users`, `nm_fasilitas`, `lk_fasilitas`, `tgl_posting`, `lo_fasilitas`, `la_fasilitas`, `gb_fasilitas`, `nm_kegiatan`, `isi_surat`, `nm_barang`, `stn_barang`, `jml_barang`, `hrg_satuan`, `total_harga`, `keterangan`, `nm_penyedia`) VALUES
-(93, 5, 0, 4, 1, '442/(03)/Obat BLUD/IFRS/RSUD/1/2020', '44203obat-bludifrsrsud12020', '2020-03-16 09:54:56', '-', 'Jl. AKBP Cek Agus No 6534 Rt. 49 Kel 8 Ilir Kec Ilir Timur II Palembang', '', 'Pengadaan Obat-obatan dan Perbekalan Farmasi', '', 'NOVOMIX-30 @5 FLEXPEN\r\nNOVORAPID @5 FLEXPEN', 'BOX\r\nBOX', '2', 0, 0, '-\r\n-', 'PT. Anugrah Argon Medica');
+(93, 5, 0, 0, 1, '442/(03)/Obat BLUD/IFRS/RSUD/1/2020', '44203obat-bludifrsrsud12020', '2020-03-16 09:54:56', '-', 'Jl. AKBP Cek Agus No 6534 Rt. 49 Kel 8 Ilir Kec Ilir Timur II Palembang', '', 'Pengadaan Obat-obatan dan Perbekalan Farmasi', '', 'NOVOMIX-30 @5 FLEXPEN\r\nNOVORAPID @5 FLEXPEN', 'BOX\r\nBOX', '2', 0, 0, '-\r\n-', 'PT. Anugrah Argon Medica');
 
 -- --------------------------------------------------------
 
@@ -148,11 +177,17 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `id_sesi`, `nm_user`, `ps_user`) VALUES
-(1, 'kivmmomkf1ulgr4b6qc6gukoo2', 'admin', '12345');
+(1, 'gng5vu5fqgmds90q97ocrbv1l4', 'admin', '12345');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `tbl_bastpb`
+--
+ALTER TABLE `tbl_bastpb`
+  ADD PRIMARY KEY (`id_bastpb`);
 
 --
 -- Indeks untuk tabel `tbl_fasilitas`
@@ -189,10 +224,16 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `tbl_bastpb`
+--
+ALTER TABLE `tbl_bastpb`
+  MODIFY `id_bastpb` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `tbl_fasilitas`
 --
 ALTER TABLE `tbl_fasilitas`
-  MODIFY `id_fasilitas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id_fasilitas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_jnsfasilitas`

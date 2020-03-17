@@ -67,7 +67,7 @@ else {
 									<label class="col-md-3 pull-left">Nomor</label>
 									<div class="col-md-9">
 										<span class="help-block">
-											<input class="form-control input-md" type="text" name="nm_fasilitas"/> 
+											<input class="form-control input-md" type="text" name="nomor"/> 
 										</span>
 									</div>
 								</div>
@@ -76,7 +76,7 @@ else {
 									<label class="col-md-3 pull-left">Hari/Tanggal Penerimaan Barang</label>
 									<div class="col-md-9">
 										<span class="help-block">
-											<input class="form-control input-md" type="text" name="nm_kegiatan"/> 
+											<input class="form-control input-md" type="text" name="tgl_surat"/> 
 										</span>
 									</div>
 								</div>
@@ -104,7 +104,7 @@ else {
 									<label class="col-md-3 pull-left">NIP</label>
 									<div class="col-md-9">
 										<span class="help-block">
-											<input class="form-control input-md" type="text" name="nm_fasilitas"/> 
+											<input class="form-control input-md" type="text" name="nip"/> 
 										</span>
 									</div>
 								</div>
@@ -113,7 +113,7 @@ else {
 									<label class="col-md-3 pull-left">Jabatan</label>
 								<div class="col-md-9">
 										<span class="help-block">
-											<input class="form-control input-md" type="text" name="la_fasilitas"/> 
+											<input class="form-control input-md" type="text" name="jabatan"/> 
 										</span>
 									</div>
 								</div>
@@ -122,7 +122,7 @@ else {
 								<div class="form-group">
 									<label class="col-md-3 pull-left">Alamat</label>
 									<div class="col-sm-9">
-							<textarea class="form-control" name="nm_barang"><?php print $data['nm_barang']; ?></textarea>
+							<textarea class="form-control" name="nm_barang"><?php print $data['alamat']; ?></textarea>
 						</div>
 					</div>
 
@@ -130,7 +130,7 @@ else {
 									<label class="col-md-3 pull-left">Telepon</label>
 									<div class="col-md-9">
 										<span class="help-block">
-											<input class="form-control input-md" type="text" name="nm_fasilitas"/> 
+											<input class="form-control input-md" type="text" name="telepon"/> 
 										</span>
 									</div>
 								</div>
@@ -139,7 +139,7 @@ else {
 									<label class="col-md-3 pull-left">Nomor Pesanan Barang</label>
 									<div class="col-md-9">
 										<span class="help-block">
-											<input class="form-control input-md" type="text" name="nm_fasilitas"/> 
+											<input class="form-control input-md" type="text" name="nmr_suratpesanan"/> 
 										</span>
 									</div>
 								</div>
@@ -152,16 +152,16 @@ else {
 					</div>
 
 								<div class="form-group">
-						<label class="col-sm-3 pull-left">Satuan Barang</label>
+						<label class="col-sm-3 pull-left">Satuan</label>
 						<div class="col-sm-9">
-							<textarea class="form-control" name="stn_barang"><?php print $data['stn_barang']; ?></textarea>
+							<textarea class="form-control" name="stn_barang"><?php print $data['satuan']; ?></textarea>
 						</div>
 					</div>
 
 								<div class="form-group">
-						<label class="col-sm-3 pull-left">Jumlah Barang</label>
+						<label class="col-sm-3 pull-left">Jumlah</label>
 						<div class="col-sm-9">
-							<textarea class="form-control" name="jml_barang"><?php print $data['jml_barang']; ?></textarea>
+							<textarea class="form-control" name="jml_barang"><?php print $data['jumlah']; ?></textarea>
 						</div>
 					</div>
 
@@ -180,9 +180,23 @@ else {
 					</div>
 
 					<div class="form-group">
+						<label class="col-sm-3 pull-left">Total Dibayar</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" name="total_harga"><?php print $data['total_dibayar']; ?></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 pull-left">Dibulatkan</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" name="total_harga"><?php print $data['dibulatkan']; ?></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
 						<label class="col-sm-3 pull-left">Terbilang</label>
 						<div class="col-sm-9">
-							<textarea class="form-control" name="total_harga"><?php print $data['total_harga']; ?></textarea>
+							<textarea class="form-control" name="total_harga"><?php print $data['terbilang']; ?></textarea>
 						</div>
 					</div>
 					

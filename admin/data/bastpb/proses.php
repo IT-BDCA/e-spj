@@ -18,28 +18,29 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])){
 else {
     if ($_GET['act']=='insert') {
         if (isset($_POST['save'])) {
-			
-					$allowed_ext	= array('pjpeg', 'jpg', 'jpeg', 'png');
-					$file_name		= $_FILES['file']['name'];
-					$file_ext		= strtolower(end(explode('.', $file_name)));
-					$file_size		= $_FILES['file']['size'];
-					$file_tmp		= $_FILES['file']['tmp_name'];
-					$acak        	= rand(1,99);
-					$nama_gambar 	= $acak.$file_name;
 					
 					$id_jnsfasilitas = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['id_jnsfasilitas'])))));
-					$id_kelurahan = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['id_kelurahan'])))));
+					$nomor = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['nomor'])))));
+					$tgl_surat = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['tgl_surat'])))));
 					$id_peta = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['id_peta'])))));
-					$nm_fasilitas = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['nm_fasilitas'])))));
-					$nm_kegiatan = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['nm_kegiatan'])))));
-					$isi_surat = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['isi_surat'])))));
-					$lo_fasilitas = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['lo_fasilitas'])))));
-					$la_fasilitas = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['la_fasilitas'])))));
-					$lk_fasilitas  = seo_title($nm_fasilitas);
+					$nip = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['nip'])))));
+					$jabatan = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['jabatan'])))));
+					$alamat = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['alamat'])))));
+					$telepon = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['telepon'])))));
+					$pihak = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['pihak'])))));
+					$nmr_suratpesanan = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['nmr_suratpesanan'])))));
+					$nm_barang = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['nm_barang'])))));
+					$jumlah = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['jumlah'])))));
+					$satuan = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['satuan'])))));
+					$hrg_satuan = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['hrg_satuan'])))));
+					$total_harga = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['total_harga'])))));
+					$total_dibayar = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['total_dibayar'])))));
+					$dibulatkan = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['dibulatkan'])))));
+					$terbilang = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['terbilang'])))));
 					if(empty($file_tmp)){
 							
-						$sim = mysqli_query($koneksi, "INSERT INTO tbl_fasilitas (id_users,id_jnsfasilitas,id_kelurahan,id_peta,nm_fasilitas,nm_kegiatan,isi_surat,lo_fasilitas,la_fasilitas,lk_fasilitas) value
-								('$_SESSION[id_users]', '$id_jnsfasilitas', '$id_kelurahan', '$id_peta', '$nm_fasilitas', '$nm_kegiatan', '$isi_surat', '$lo_fasilitas', '$la_fasilitas', '$lk_fasilitas')");
+						$sim = mysqli_query($koneksi, "INSERT INTO tbl_bastpb (id_users,id_jnsfasilitas,id_peta,nomor,tgl_surat,nip,jabatan,alamat,telepon,pihak,nmr_suratpesanan,nm_barang,jumlah,satuan,hrg_satuan,total_harga,total_dibayar,dibulatkan,terbilang) value
+								('$_SESSION[id_users]', '$id_jnsfasilitas', $id_peta', '$nomor', '$tgl_surat', '$nip', '$jabatan', '$alamat', '$telepon', '$pihak', '$nmr_suratpesanan', '$nm_barang', '$jumlah', '$satuan', '$hrg_satuan', '$total_harga', '$total_dibayar', '$dibulatkan', '$terbilang')");
 						if($sim == true){
 							echo "<meta http-equiv='refresh' content='0; url=../../main.php?page=bastpb&alert=1'>";
 							exit;
@@ -58,8 +59,8 @@ else {
 								$fl = $nm_file.'.'.$file_ext;
 								$folder = "../../../lib/img/fasilitas/";
 								$ukuran = 200;
-								$sim = mysqli_query($koneksi, "INSERT INTO tbl_fasilitas (id_users,id_jnsfasilitas,id_kelurahan,id_peta,nm_fasilitas, nm_kegiatan,isi_surat,lo_fasilitas,la_fasilitas,lk_fasilitas,gb_fasilitas) value
-								('$_SESSION[id_users]', '$id_jnsfasilitas', '$id_kelurahan', '$id_peta', '$nm_fasilitas', '$nm_kegiatan', '$isi_surat', '$lo_fasilitas', '$la_fasilitas', '$lk_fasilitas', '$nm_file.$file_ext')");
+								$sim = mysqli_query($koneksi, "INSERT INTO tbl_bastpb (id_users,id_jnsfasilitas,id_peta,nomor,tgl_surat,nip,jabatan,alamat,telepon,pihak,nmr_suratpesanan,nm_barang,jumlah,satuan,hrg_satuan,total_harga,total_dibayar,dibulatkan,terbilang) value
+								('$_SESSION[id_users]', '$id_jnsfasilitas', '$id_peta', '$nomor', '$tgl_surat', '$nip', '$jabatan', '$alamat', '$telepon', '$pihak', '$nmr_suratpesanan', '$nm_barang', '$jumlah', '$satuan', '$hrg_satuan', 'total_harga', '$total_dibayar', '$dibulatkan', '$terbilang', '$nm_file.$file_ext')");
 								
 								if($sim == true){
 									UploadFotox($fl, $folder, $ukuran);

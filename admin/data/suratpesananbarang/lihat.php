@@ -20,8 +20,8 @@ else {
         <div class="col-xs-12">
 			<ol class="breadcrumb">
 				<li><a href="main.php?page=home"><i class="fa fa-home"></i> Home</a></li>
-				<li><a href="main.php?page=jnsfasilitas"> Data Jenis Fasilitas</a></li>
-				<li class="active"> Lihat Data Jenis Fasilitas</li>
+				<li><a href="main.php?page=suratpesananbarang"> Data Surat Pesanan Barang</a></li>
+				<li class="active"> Lihat Surat Pesanan Barang</li>
 			</ol>
 		</div>
 	</div>
@@ -29,10 +29,10 @@ else {
 <?php
 if (isset($_GET['id'])) {
       // fungsi query untuk menampilkan data dari tabel portfolio
-      $query = mysqli_query($koneksi, "SELECT * FROM tbl_jnsfasilitas WHERE id_jnsfasilitas = '$_GET[id]'") 
-                                      or die('Ada kesalahan pada query tampil data jenis fasilitas : '.mysqli_error());
+      $query = mysqli_query($koneksi, "SELECT * FROM tbl_fasilitas WHERE id_fasilitas = '$_GET[id]'") 
+                                      or die('Ada kesalahan pada query tampil data surat pesanan barang : '.mysqli_error());
       $data  = mysqli_fetch_assoc($query);
-	  if($data['id_jnsfasilitas'] == true){
+	  if($data['id_fasilitas'] == true){
 ?>
   <!-- Main content -->
   <section class="content">
@@ -42,27 +42,82 @@ if (isset($_GET['id'])) {
           <div class="box-header">
 			<div class="col-xs-12">
 			<h2>
-				<i class="fa fa-list icon-title"></i>  Lihat Data Jenis Fasilitas
+				<i class="fa fa-list icon-title"></i>  Lihat Surat Pesanan Barang
 			</h2>
 			</div>
 
 			</div>
-			
-			
+
 			<div class="box-body">
-				<div class="col-xs-12">
-					<div class="page-header">
-						<?php print $data['nm_jnsfasilitas']; ?>
-					</div>
-				</div>
-				<div class="col-xs-12">
-					<?php print html_entity_decode($data['map_jnsfasilitas']); ?>
-				</div>
-			</div>
-			
+						<div class="col-xs-12">
+							<div class="form-group col-lg-12">
+									<div class="col-md-10">
+										<center><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+											<?php
+											$query  = "SELECT * FROM tbl_jnsfasilitas where id_jnsfasilitas = '$data[id_jnsfasilitas]'";
+											$tampil = mysqli_query($koneksi, $query);
+											while($r=mysqli_fetch_array($tampil)){
+												echo "$r[nm_jnsfasilitas]";
+											}
+											?>
+											</b>	
+											</center>				
+										</span>
+									</div>
+							</div>
+
+							<div class="form-group col-lg-12">
+									<label class="col-sm-2 pull-left">NOMOR&nbsp;&nbsp;&nbsp;:</label>
+									<div class="col-sm-10">
+									  <?php print $data['nm_fasilitas']; ?>
+									</div>
+								</div>
+
+								<div class="form-group col-lg-12">
+									<label class="col-sm-2 pull-left">Kegiatan&nbsp;:</label>
+									<div class="col-sm-10">
+									  <?php print $data['nm_kegiatan']; ?>
+									</div>
+								</div>
+
+								<div class="form-group col-lg-12">
+									<label class="col-sm-2 pull-left">Nama&nbsp;:</label>
+									<div class="col-sm-10">
+									  <?php print $data['nm_penyedia']; ?>
+									</div>
+								</div>
+
+								<div class="form-group col-lg-12">
+									<label class="col-sm-2 pull-left">Alamat&nbsp;:</label>
+									<div class="col-sm-10">
+									  <?php print $data['la_fasilitas']; ?>
+									</div>
+								</div>
+
+								<div class="form-group col-lg-12">
+									<label class="col-sm-2 pull-left">Telepon&nbsp;:</label>
+									<div class="col-sm-10">
+									  <?php print $data['lo_fasilitas']; ?>
+									</div>
+								</div>
+
+								<div class="box-body">
+						<div class="col-xs-12">
+							<div class="form-group col-lg-12">
+									<div class="col-md-10">
+											<?php
+											$query  = "SELECT * FROM tbl_peta where id_peta = '$data[id_peta]'";
+											$tampil = mysqli_query($koneksi, $query);
+											while($r=mysqli_fetch_array($tampil)){
+												echo "$r[nm_peta]";
+											}
+											?>				
+									</div>
+							</div>
+										
 			<div class="box-footer">
 				<div class="col-xs-12">
-					<div class="pull-righr"><a href="main.php?page=jnsfasilitas" class="btn btn-default btn-reset">Kembali</a></div>
+					<div class="pull-righr"><a href="main.php?page=suratpesananbarang" class="btn btn-default btn-reset">Kembali</a></div>
 				</div>
 			</div><!-- /.box footer -->
 			  

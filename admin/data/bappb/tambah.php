@@ -165,7 +165,7 @@ else {
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 pull-left">Tanggal Penerimaan</label>
+						<label class="col-sm-3 pull-left">Tanggal Penerima</label>
 						<div class="col-sm-9">
 							<textarea class="form-control" name="total_harga"><?php print $data['total_harga']; ?></textarea>
 						</div>
